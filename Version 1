@@ -3,6 +3,106 @@
 
 -- Instances:
 
+local Menu = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local UserLabel = Instance.new("TextLabel")
+
+-- Properties:
+
+Menu.Name = "Menu"
+Menu.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Menu.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = Menu
+MainFrame.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.0927487388, 0, 0.0964912251, 0)
+MainFrame.Size = UDim2.new(0, 414, 0, 235)
+
+TextButton.Parent = MainFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.0797101483, 0, 0.384325266, 0)
+TextButton.Size = UDim2.new(0, 125, 0, 125)
+TextButton.Font = Enum.Font.SourceSansBold
+TextButton.Text = "{} Start coding"
+TextButton.TextColor3 = Color3.fromRGB(99, 99, 99)
+TextButton.TextSize = 23.000
+TextButton.TextXAlignment = Enum.TextXAlignment.Left
+TextButton.TextYAlignment = Enum.TextYAlignment.Top
+
+ImageLabel.Parent = MainFrame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Size = UDim2.new(0, 52, 0, 52)
+ImageLabel.Image = "rbxassetid://18803956938"
+
+TextLabel.Parent = MainFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(-0.00966183562, 0, -0.0319634713, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Salad"
+TextLabel.TextColor3 = Color3.fromRGB(0, 85, 0)
+TextLabel.TextSize = 41.000
+
+TextLabel_2.Parent = MainFrame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(-0.00966183562, 0, 0.0566598773, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "Exploit system"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 85, 0)
+TextLabel_2.TextSize = 15.000
+
+TextLabel_3.Parent = MainFrame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(-0.0386473425, 0, 0.170815125, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_3.Font = Enum.Font.SourceSansBold
+TextLabel_3.Text = "Welcome"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 26.000
+
+UserLabel.Name = "UserLabel"
+UserLabel.Parent = MainFrame
+UserLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UserLabel.BackgroundTransparency = 1.000
+UserLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UserLabel.BorderSizePixel = 0
+UserLabel.Position = UDim2.new(0.235165997, 0, 0.176792875, 0)
+UserLabel.Size = UDim2.new(0, 200, 0, 50)
+UserLabel.Font = Enum.Font.SourceSansBold
+UserLabel.TextColor3 = Color3.fromRGB(0, 85, 0)
+UserLabel.TextSize = 26.000
+
+-- Scripts:
+
+-- Button click event
+TextButton.MouseButton1Click:Connect(function()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -321,3 +421,14 @@ XButton.MouseButton1Click:Connect(function()
     -- Replace this with your desired functionality for closing the UI
     ScreenGui:Destroy() -- Destroys the entire ScreenGui, effectively closing the UI
 end)
+
+end)
+
+-- Make MainFrame draggable
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+-- Set UserLabel text to the player's username
+local player = game.Players.LocalPlayer
+UserLabel.Text = player.Name
+
